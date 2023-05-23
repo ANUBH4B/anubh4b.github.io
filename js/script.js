@@ -13,6 +13,9 @@ tippy('#github', {
 tippy('#discord', {
   content: 'ANUBH4B#4069',
 });
+tippy('#discord', {
+  content: 'ANUBH4B\'S Café',
+});
 tippy('#twitter', {
   content: 'ANUBH4B',
 });
