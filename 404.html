@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="titanium">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 • Page Not Found | ANUBHAB</title>
+  
+  <meta name="description" content="The page you were looking for does not exist.">
+  <meta name="author" content="ANUBH4B">
+  <meta name="theme-color" content="#060608">
+  
+  <link rel="icon" type="image/gif" href="favicons/lol.gif">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Ambient Animated Background Effects -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- 3D Perspective Card Wrapper -->
+  <main class="card-perspective-wrapper">
+    <div class="portfolio-card error-card" id="tiltCard">
+      <!-- Dynamic Cursor Spotlight Layer -->
+      <div class="card-spotlight" aria-hidden="true"></div>
+
+      <div class="card-content-inner">
+        <!-- Status Indicator -->
+        <div class="error-status-badge">
+          <span class="error-status-pulse"></span>
+          <span>404 // Lost in Void</span>
+        </div>
+
+        <!-- Giant Glowing 404 Typography -->
+        <div class="error-code-glow">404</div>
+
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">
+          The coordinate you are searching for does not exist, was relocated, or vaporized into the digital void.
+        </p>
+
+        <!-- Full Glassmorphism Action Buttons -->
+        <div class="error-actions">
+          <a href="/" class="return-btn">
+            <button class="copy-btn glass-btn" type="button" style="width: 100%;">
+              <div class="glass-reflection" aria-hidden="true"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Return Home</span>
+            </button>
+          </a>
+          <a href="https://discord.gg/4CnVUmfatR" target="_blank" rel="noopener noreferrer" class="return-btn">
+            <button class="copy-btn glass-btn" type="button" style="width: 100%;">
+              <div class="glass-reflection" aria-hidden="true"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Join Discord</span>
+            </button>
+          </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="card-footer">
+          <span class="copyright-text">&copy; ANUBH4B <span id="currentYear"></span></span>
+        </footer>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Toast Feedback -->
+  <div id="toast" class="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- Custom Glowing Interactive Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
