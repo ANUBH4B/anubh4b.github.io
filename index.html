@@ -1,63 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="titanium">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="keywords" content="ANUBH4B, portfolio, programming, developer, website">
-  <meta name="description" content="Hi there! I am a passionate individual who loves to code and expand knowledge. With a keen interest in learning, I enjoy challenges and exploring tech. When not coding, I immerse in video games and enjoy time with friends. Blissful sleep is also cherished!">
-  <meta property="og:image" content="https://cdn.discordapp.com/icons/814092965382324224/34e7e225a74e163fdc1eea85a2a3b03d.webp?size=2048">
-  <meta name="author" property="og:author" content="ANUBH4B">
-  <meta property="og:site_name" content="ANUBH4B" />
-  <meta content="#2B2D31" data-react-helmet="true" name="theme-color" />
-  <title>ANUBH4B's Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="favicons/lol.gif">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANUBHAB • Fullstack Developer</title>
+
+  <meta name="keywords" content="ANUBH4B, Anubhab, portfolio, developer, fullstack, software engineer, web development">
+  <meta name="description"
+    content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects. Passionate about development, networking, exploring new technologies, and creating digital experiences through code and design.">
+  <meta name="author" content="ANUBH4B">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ANUBHAB • Fullstack Developer">
+  <meta property="og:description"
+    content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects.">
+  <meta property="og:site_name" content="ANUBH4B">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/74665803?v=4">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ANUBH4B">
+  <meta name="twitter:title" content="ANUBHAB • Fullstack Developer">
+  <meta name="twitter:description"
+    content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/74665803?v=4">
+
+  <meta name="theme-color" content="#060608">
+  <link rel="icon" type="image/gif" href="favicons/lol.gif">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="b92b7307-eda3-4453-9fe1-2eb089c5565c"></script>
 </head>
 
 <body>
-  <div id="content">
-    <div id="header">
-      <h1 id="title">hello there! i'm <span id="color">ANUBHAB</span><span id="exclamation">!</span>
-      </h1>
-    </div>
-    <div id="text">
-      <p>I'm a self-taught developer who specializes in fullstack web development, but I'm trying to branch out into
-        other areas such as Java and C.
-      </p>
-    </div>
-    <div>
-      <h3 class="smallTitle">Catch me on the web:</h3>
-      <div id="socials">
-        <!-- <button class="social" onclick="window.open('https://www.instagram.com/1am_anubhab/', '_blank');"
-          id="instagram"><img src="images/instagram.svg"></button> -->
-        <button class="social" onclick="window.open('https://steamcommunity.com/id/ANUBH4B/', '_blank');" id="steam"><img src="images/steam.svg"></button>
-        <button class="social" onclick="window.open('http://live.xbox.com/Profile?Gamertag=anubh4b', '_blank');"
-          id="xbox"><img src="images/xbox.svg"></button>
-        <button class="social" onclick="window.open('https://github.com/ANUBH4B', '_blank');" id="github"><img
-            src="images/github.svg"></button>
-        <!-- <button class="social" onclick="window.open('https://discord.com/users/765917032281276426', '_blank');"
-          id="discord"><img src="images/discord.svg"></button> -->
-        <button class="social" onclick="window.open('https://discord.gg/4CnVUmfatR', '_blank');"
-          id="discord"><img src="images/discord.svg"></button>
-        <button class="social" onclick="window.open('https://twitter.com/ANUBH4B', '_blank');" id="twitter"><img
-            src="images/twitter.svg"></button>
-        <button class="social"
-          onclick="window.open('https://www.youtube.com/channel/UCe7mOzicqir-3VCvx0s2sUg', '_blank');" id="youtube"><img
-            src="images/youtube.svg"></button>
-        <button class="social" onclick="window.open('mailto:contactanubhab@gmail.com', '_blank');" id="email"><img
-            src="images/email.svg"></button>
-      </div>
-    </div>
+  <!-- Ambient Animated Background Effects -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
   </div>
-  <p id="copyright">&copy;ANUBH4B
-    <script>document.write(new Date().getFullYear())</script>
-  </p>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- 3D Perspective Card Wrapper -->
+  <main class="card-perspective-wrapper">
+    <div class="portfolio-card" id="tiltCard">
+      <!-- Dynamic Cursor Spotlight Layer -->
+      <div class="card-spotlight" aria-hidden="true"></div>
+
+      <div class="card-content-inner">
+        <!-- Card Header -->
+        <header class="card-header stagger-item" style="--delay: 1;">
+          <div class="status-group">
+            <div class="status-badge" title="Current Status">
+              <span class="status-pulse"></span>
+              <span>Available for projects</span>
+            </div>
+            <div class="live-clock-badge" id="liveClock" title="Local Time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span id="clockTime">--:--:-- IST</span>
+            </div>
+          </div>
+
+          <div class="avatar-container" id="avatarContainer">
+            <img id="avatarImg" src="https://cdn.discordapp.com/avatars/765917032281276426/1359f9575a860a431faa98ca4bfc8985.png?size=256" alt="ANUBHAB Avatar" class="avatar-img"
+              onerror="this.src='https://avatars.githubusercontent.com/u/74665803?v=4'">
+            <img id="avatarDecoration" class="avatar-decoration" alt="" style="display: none;">
+            <span class="discord-status-dot offline" id="discordStatusDot" title="Discord: Offline"></span>
+            <div class="avatar-monogram" style="display: none;">A</div>
+          </div>
+        </header>
+
+        <!-- Identity, Title & Morphing Role -->
+        <div class="title-group stagger-item" style="--delay: 2;">
+          <p class="greeting-text">hello there! i'm</p>
+          <h1 class="main-name">
+            <span class="name-gradient">ANUBHAB</span><span class="exclamation">!</span>
+          </h1>
+          <div class="role-tagline" aria-label="Developer Roles">
+            <span>//</span>
+            <span id="roleText" class="role-text-target">Fullstack Developer</span>
+            <span class="typing-caret" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- Bio / Description -->
+        <p class="bio-text stagger-item" style="--delay: 3;">
+          I'm a self-taught developer who loves <span class="bio-highlight">tech, gaming, building things</span>, and
+          turning ideas into real projects. I'm passionate about development, networking, exploring new technologies,
+          and creating digital experiences through code and design.
+        </p>
+
+        <!-- Skills Matrix -->
+        <section class="skills-section stagger-item" style="--delay: 4;">
+          <span class="section-label">Tech Stack & Skills</span>
+          <div class="skills-wrapper">
+            <span class="skill-pill">HTML / CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Supabase</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Linux</span>
+          </div>
+        </section>
+
+        <!-- Socials Matrix -->
+        <section class="socials-section stagger-item" style="--delay: 5;">
+          <span class="section-label">Catch me on the web</span>
+          <div class="social-grid" id="socials">
+            <button class="social-btn" id="github" aria-label="GitHub Profile"
+              onclick="window.open('https://github.com/ANUBH4B', '_blank');">
+              <img src="images/github.svg" alt="GitHub">
+            </button>
+            <button class="social-btn" id="email" aria-label="Send Email"
+              onclick="window.open('mailto:contactanubhab@gmail.com', '_blank');">
+              <img src="images/email.svg" alt="Email">
+            </button>
+            <button class="social-btn" id="steam" aria-label="Steam Profile"
+              onclick="window.open('https://steamcommunity.com/id/ANUBH4B/', '_blank');">
+              <img src="images/steam.svg" alt="Steam">
+            </button>
+            <button class="social-btn" id="xbox" aria-label="Xbox Gamertag"
+              onclick="window.open('http://live.xbox.com/Profile?Gamertag=anubh4b', '_blank');">
+              <img src="images/xbox.svg" alt="Xbox">
+            </button>
+            <button class="social-btn" id="twitter" aria-label="X (Twitter) Profile"
+              onclick="window.open('https://x.com/ANUBH4B', '_blank');">
+              <img src="images/x.svg" alt="X">
+            </button>
+            <button class="social-btn" id="youtube" aria-label="YouTube Channel"
+              onclick="window.open('https://www.youtube.com/channel/UCe7mOzicqir-3VCvx0s2sUg', '_blank');">
+              <img src="images/youtube.svg" alt="YouTube">
+            </button>
+          </div>
+        </section>
+
+        <!-- Full Glassmorphism Quick Actions -->
+        <div class="quick-actions stagger-item" style="--delay: 6;">
+          <button class="copy-btn glass-btn" id="dmDiscordBtn" type="button" aria-label="DM on Discord">
+            <div class="glass-reflection" aria-hidden="true"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>DM on Discord</span>
+          </button>
+          <button class="copy-btn glass-btn" id="joinDiscordBtn" type="button" aria-label="Join Discord Server"
+            onclick="window.open('https://discord.gg/4CnVUmfatR', '_blank');">
+            <div class="glass-reflection" aria-hidden="true"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Join Discord Server</span>
+          </button>
+        </div>
+
+        <!-- Card Footer -->
+        <footer class="card-footer stagger-item" style="--delay: 7;">
+          <span class="copyright-text">&copy; ANUBH4B <span id="currentYear"></span></span>
+        </footer>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Toast Feedback -->
+  <div id="toast" class="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- Custom Glowing Interactive Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
-  <script src="js/script.js"></script>
-  <!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+  <script src="js/lanyard.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 
 </html>

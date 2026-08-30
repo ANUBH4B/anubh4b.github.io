@@ -1,27 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="titanium">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="keywords" content="ANUBH4B, portfolio, programming, developer, website">
-  <meta name="description" content="Hi there! I am a passionate individual who loves to code and expand knowledge. With a keen interest in learning, I enjoy challenges and exploring tech. When not coding, I immerse in video games and enjoy time with friends. Blissful sleep is also cherished!">
-  <meta property="og:image" content="https://cdn.discordapp.com/icons/814092965382324224/34e7e225a74e163fdc1eea85a2a3b03d.webp?size=2048">
-  <meta name="author" property="og:author" content="ANUBH4B">
-  <meta property="og:site_name" content="ANUBH4B" />
-  <meta content="#2B2D31" data-react-helmet="true" name="theme-color" />
-  <title>ANUBH4B's Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="favicons/lol.gif">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <meta http-equiv="refresh" content="0; url = https://discord.gg/4CnVUmfatR" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to Discord • ANUBH4B</title>
+  
+  <meta name="description" content="Join ANUBH4B's Discord community server.">
+  <meta property="og:title" content="Join ANUBH4B's Discord Server">
+  <meta property="og:description" content="Connect and chat on Discord.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/74665803?v=4">
+  <meta name="theme-color" content="#060608">
+  
+  <link rel="icon" type="image/gif" href="favicons/lol.gif">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <meta http-equiv="refresh" content="2; url=https://discord.gg/4CnVUmfatR">
 </head>
 
 <body>
-Redirecting to discord invite URL
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
+  <!-- Ambient Animated Background Effects -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <main class="card-perspective-wrapper">
+    <div class="portfolio-card redirect-card" id="tiltCard">
+      <div class="card-spotlight" aria-hidden="true"></div>
+      
+      <div class="card-content-inner">
+        <div class="discord-icon-wrap" style="margin: 0 auto 12px;">
+          <img src="images/discord.svg" alt="Discord">
+        </div>
+        
+        <div class="title-group" style="margin-bottom: 6px;">
+          <p class="greeting-text">ANUBH4B's Café</p>
+          <h1 class="main-name" style="font-size: 1.5rem;">Redirecting to Discord...</h1>
+        </div>
+        
+        <p class="bio-text" style="margin-bottom: 14px;">
+          Taking you to the official Discord community server.
+        </p>
+        
+        <a href="https://discord.gg/4CnVUmfatR" class="redirect-btn">
+          <span>Join Server Directly</span>
+          <span>&rarr;</span>
+        </a>
+        
+        <p class="redirect-note" style="margin-top: 10px;">If not redirected automatically, click the button above.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Custom Glowing Interactive Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Scripts -->
   <script src="js/script.js"></script>
-  <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 </body>
 
 </html>
