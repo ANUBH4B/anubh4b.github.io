@@ -6,7 +6,8 @@
  */
 
 (function () {
-  const DISCORD_USER_ID = '765917032281276426';
+  const config = window.PORTFOLIO_CONFIG || {};
+  const DISCORD_USER_ID = config.discord?.userId || '765917032281276426';
   const LANYARD_REST_URL = `https://api.lanyard.rest/v1/users/${DISCORD_USER_ID}`;
   const LANYARD_WS_URL = 'wss://api.lanyard.rest/socket';
 
@@ -28,12 +29,18 @@
 
     const { discord_user, discord_status, activities, spotify, avatar_decoration_data } = data;
 
-    // 1. Update Discord Avatar
-    if (discord_user && discord_user.avatar && avatarImg) {
-      const isGif = discord_user.avatar.startsWith('a_');
-      const ext = isGif ? 'gif' : 'png';
-      const avatarUrl = `https://cdn.discordapp.com/avatars/${discord_user.id}/${discord_user.avatar}.${ext}?size=256`;
-      if (avatarImg.src !== avatarUrl) {
+    // 1. Update Discord Avatar directly via Lanyard API
+    if (avatarImg && discord_user) {
+      let avatarUrl = '';
+      if (discord_user.avatar) {
+        const isGif = discord_user.avatar.startsWith('a_');
+        const ext = isGif ? 'gif' : 'png';
+        avatarUrl = `https://cdn.discordapp.com/avatars/${discord_user.id}/${discord_user.avatar}.${ext}?size=256`;
+      } else {
+        const defaultIndex = (BigInt(discord_user.id) >> 22n) % 6n;
+        avatarUrl = `https://cdn.discordapp.com/embed/avatars/${defaultIndex}.png`;
+      }
+      if (avatarUrl && avatarImg.src !== avatarUrl) {
         avatarImg.src = avatarUrl;
       }
     }
