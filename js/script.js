@@ -44,7 +44,7 @@ const ROLES = [
   'Fullstack Developer',
   'Networking Enthusiast',
   'Gamer & Tech Tinkerer',
-  'Digital Experience Creator',
+  'Building Cool Stuff',
 ];
 
 const roleTextEl = document.getElementById('roleText');
@@ -157,10 +157,26 @@ async function copyToClipboard(text, successMessage) {
 const dmDiscordBtn = document.getElementById('dmDiscordBtn');
 if (dmDiscordBtn) {
   dmDiscordBtn.addEventListener('click', () => {
-    copyToClipboard('anubh4b', '💬 Discord tag copied: anubh4b (Opening Discord...)');
+    const config = window.PORTFOLIO_CONFIG || {};
+    const tag = config.discord?.username || 'anubh4b';
+    const dmUrl = config.discord?.dmUrl || 'https://discord.com/users/765917032281276426';
+    copyToClipboard(tag, `💬 Discord tag copied: ${tag} (Opening Discord...)`);
     setTimeout(() => {
-      window.open('https://discord.com/users/765917032281276426', '_blank');
+      window.open(dmUrl, '_blank');
     }, 400);
+  });
+}
+
+const emailBtn = document.getElementById('email');
+if (emailBtn) {
+  emailBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const config = window.PORTFOLIO_CONFIG || {};
+    const email = (config.links && config.links.email ? config.links.email.replace('mailto:', '') : 'contactanubhab@gmail.com');
+    copyToClipboard(email, `📋 Email copied: ${email} (Opening mail app in 5s...)`);
+    setTimeout(() => {
+      window.location.href = `mailto:${email}`;
+    }, 3000);
   });
 }
 
@@ -175,6 +191,9 @@ if (joinDiscordBtn) {
 // 6. TIPPY TOOLTIPS CONFIGURATION
 // ==========================================================================
 if (typeof tippy !== 'undefined') {
+  const config = window.PORTFOLIO_CONFIG || {};
+  const labels = config.socialLabels || {};
+
   const tippyConfig = {
     theme: 'modern',
     animation: 'shift-away',
@@ -183,13 +202,13 @@ if (typeof tippy !== 'undefined') {
     duration: [200, 150],
   };
 
-  tippy('#github', { ...tippyConfig, content: 'GitHub: @ANUBH4B' });
-  tippy('#email', { ...tippyConfig, content: 'Email: contactanubhab@gmail.com' });
-  tippy('#steam', { ...tippyConfig, content: 'Steam: ANUBH4B' });
-  tippy('#xbox', { ...tippyConfig, content: 'Xbox: ANUBH4B' });
-  tippy('#twitter', { ...tippyConfig, content: 'X (Twitter): @ANUBH4B' });
-  tippy('#youtube', { ...tippyConfig, content: 'YouTube: AnubhabGG' });
-  tippy('#dmDiscordBtn', { ...tippyConfig, content: 'Copy tag & DM on Discord (@anubh4b)' });
+  tippy('#github', { ...tippyConfig, content: labels.github || 'GitHub: @ANUBH4B' });
+  tippy('#email', { ...tippyConfig, content: 'Copy & Send Email (contactanubhab@gmail.com)' });
+  tippy('#steam', { ...tippyConfig, content: labels.steam || 'Steam: ANUBH4B' });
+  tippy('#xbox', { ...tippyConfig, content: labels.xbox || 'Xbox: ANUBHAB2004' });
+  tippy('#twitter', { ...tippyConfig, content: labels.x || 'X (Twitter): @ANUBH4B' });
+  tippy('#youtube', { ...tippyConfig, content: labels.youtube || 'YouTube: AnubhabGG' });
+  tippy('#dmDiscordBtn', { ...tippyConfig, content: `Copy tag & DM on Discord (@${config.discord?.username || 'anubh4b'})` });
   tippy('#joinDiscordBtn', { ...tippyConfig, content: "Join ANUBH4B's Café Discord Server" });
 }
 
@@ -332,7 +351,7 @@ if (canvas) {
 
     draw() {
       const currentRadius = this.baseR + Math.sin(time * this.morphSpeed + this.phase) * this.amp;
-      
+
       const grad = ctx.createRadialGradient(
         this.x, this.y, 0,
         this.x, this.y, Math.max(10, currentRadius)

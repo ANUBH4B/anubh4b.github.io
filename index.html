@@ -11,24 +11,68 @@
     content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects. Passionate about development, networking, exploring new technologies, and creating digital experiences through code and design.">
   <meta name="author" content="ANUBH4B">
 
+  <!-- Canonical URL & Indexing -->
+  <link rel="canonical" href="https://anubh4b.github.io/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Performance Preconnect & DNS-Prefetch Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.lanyard.rest">
+  <link rel="preconnect" href="https://cdn.discordapp.com">
+  <link rel="dns-prefetch" href="https://cloud.umami.is">
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anubh4b.github.io/">
   <meta property="og:title" content="ANUBHAB • Fullstack Developer">
   <meta property="og:description"
     content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects.">
   <meta property="og:site_name" content="ANUBH4B">
+  <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/74665803?v=4">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="ANUBHAB • Fullstack Developer Portfolio">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ANUBH4B">
+  <meta name="twitter:creator" content="@ANUBH4B">
+  <meta name="twitter:url" content="https://anubh4b.github.io/">
   <meta name="twitter:title" content="ANUBHAB • Fullstack Developer">
   <meta name="twitter:description"
     content="Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects.">
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/74665803?v=4">
+  <meta name="twitter:image:alt" content="ANUBHAB • Fullstack Developer Portfolio">
 
   <meta name="theme-color" content="#060608">
   <link rel="icon" type="image/gif" href="favicons/lol.gif">
+
+  <!-- Structured Data JSON-LD for Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ANUBHAB",
+    "alternateName": "ANUBH4B",
+    "url": "https://anubh4b.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/74665803?v=4",
+    "jobTitle": "Fullstack Developer",
+    "sameAs": [
+      "https://github.com/ANUBH4B",
+      "https://x.com/ANUBH4B",
+      "https://steamcommunity.com/id/anubh4b",
+      "https://www.youtube.com/@anubhabgg"
+    ],
+    "description": "Self-taught developer who loves tech, gaming, building things, and turning ideas into real projects."
+  }
+  </script>
+
+  <!-- Central Configuration & Dynamic Links Engine -->
+  <script src="js/config.js"></script>
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -72,7 +116,7 @@
           </div>
 
           <div class="avatar-container" id="avatarContainer">
-            <img id="avatarImg" src="https://cdn.discordapp.com/avatars/765917032281276426/1359f9575a860a431faa98ca4bfc8985.png?size=256" alt="ANUBHAB Avatar" class="avatar-img"
+            <img id="avatarImg" src="" alt="ANUBHAB Avatar" class="avatar-img"
               onerror="this.src='https://avatars.githubusercontent.com/u/74665803?v=4'">
             <img id="avatarDecoration" class="avatar-decoration" alt="" style="display: none;">
             <span class="discord-status-dot offline" id="discordStatusDot" title="Discord: Offline"></span>
@@ -123,8 +167,7 @@
               onclick="window.open('https://github.com/ANUBH4B', '_blank');">
               <img src="images/github.svg" alt="GitHub">
             </button>
-            <button class="social-btn" id="email" aria-label="Send Email"
-              onclick="window.open('mailto:contactanubhab@gmail.com', '_blank');">
+            <button class="social-btn" id="email" aria-label="Copy Email Address">
               <img src="images/email.svg" alt="Email">
             </button>
             <button class="social-btn" id="steam" aria-label="Steam Profile"
